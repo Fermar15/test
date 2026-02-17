@@ -679,7 +679,7 @@ header:hover {
     }
 
     #chat-frame {
-        /* Se mantiene centrado en la pantalla del móvil */
+        /* Se mantiene centrado en la pantalla del móvi */
         width: calc(100vw - 40px) !important;
         left: 20px !important;
         right: 20px !important;
