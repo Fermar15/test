@@ -651,25 +651,25 @@ header:hover {
     }
 
     @media (max-width: 768px) {
-    #ventana-fija {
-        /* Forzamos que esté oculto al iniciar en celulares */
-        display: none !important; 
-        
-        /* Ajustamos el tamaño para que no tape toda la pantalla del cel */
-        width: 90vw !important; 
-        right: 0 !important;
-        bottom: 70px !important;
-        position: fixed !important; /* Lo anclamos a la pantalla */
-    }
+        #spa-chatbot-wrapper {
+            bottom: 20px !important;
+            right: 20px !important;
+            width: 60px !important; /* Forzamos que el contenedor no crezca */
+        }
 
-    #bot-spa-definitivo {
-        bottom: 10px !important;
-        right: 10px !important;
-    }
+        #bubble-control {
+            width: 55px !important;
+            height: 55px !important;
+            font-size: 25px !important;
+            margin-left: auto !important; /* Lo pega a la derecha */
+        }
 
-    #burbuja-fija {
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 25px !important;
+        #chat-frame {
+            position: fixed !important; /* Para que no se descuadre al hacer scroll */
+            bottom: 85px !important;
+            right: 15px !important;
+            left: 15px !important; /* Centra el chat en la pantalla del móvil */
+            width: auto !important; /* Deja que tome el ancho de la pantalla menos los márgenes */
+            max-width: none !important;
+        }
     }
-}
