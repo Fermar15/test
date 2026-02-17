@@ -566,24 +566,23 @@ header:hover {
     box-sizing: border-box;
 }
 
-/* ESTILOS BASE CON TUS COLORES DORADOS */
+/* 1. EL CONTENEDOR (Solo para la burbuja) */
     #spa-chatbot-wrapper {
         position: fixed !important;
         bottom: 30px !important;
         right: 30px !important;
         z-index: 999999 !important;
         font-family: Arial, sans-serif;
-        /* Mantenemos el truco del transform para evitar parpadeos */
-        transform: translateZ(0); 
-        -webkit-transform: translateZ(0);
+        width: 60px; /* Tamaño fijo para que no estorbe */
     }
 
+    /* 2. LA BURBUJA (Círculo perfecto) */
     #bubble-control {
-        width: 60px;
-        height: 60px;
-        background-color: #c2ac1abc; /* Tu dorado */
-        border-radius: 50% !important; /* Forzamos círculo */
-        display: flex;
+        width: 60px !important;
+        height: 60px !important;
+        background-color: #c2ac1abc;
+        border-radius: 50% !important;
+        display: flex !important;
         align-items: center;
         justify-content: center;
         font-size: 30px;
@@ -591,12 +590,13 @@ header:hover {
         box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
+    /* 3. LA VENTANA (Escritorio) */
     #chat-frame {
         position: absolute;
         bottom: 80px;
         right: 0;
         width: 300px;
-        background: rgba(218, 165, 32, .8); /* Tu fondo dorado transparente */
+        background: rgba(218, 165, 32, .9);
         border-radius: 15px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         flex-direction: column;
@@ -604,77 +604,34 @@ header:hover {
         display: none;
     }
 
-    /* ESTILOS INTERNOS CON TUS COLORES */
-    #chat-header-spa { 
-        background: rgba(218, 165, 32, .8); /* Tu cabecera dorada */
-        color: white; 
-        padding: 15px; 
-        display: flex; 
-        justify-content: space-between; 
-    }
+    /* ESTILOS INTERNOS */
+    #chat-header-spa { background: rgba(218, 165, 32, 1); color: white; padding: 15px; display: flex; justify-content: space-between; }
+    #chat-header-spa button { background: none; border: none; color: white; cursor: pointer; font-size: 20px; }
+    #chat-content { height: 200px; padding: 15px; overflow-y: auto; background: rgba(255, 255, 255, 0.95); }
+    .msg-bot { background: #f1f3f0; padding: 8px 12px; border-radius: 10px; margin-bottom: 10px; font-size: 14px; color: #333; }
+    #chat-actions { padding: 10px; display: flex; gap: 5px; background: white; }
+    #chat-actions button { background: rgba(142, 107, 19, 1); color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; flex: 1; }
 
-    #chat-header-spa button { 
-        background: none; 
-        border: none; 
-        color: white; 
-        cursor: pointer; 
-        font-weight: bold; 
-    }
-
-    #chat-content { 
-        height: 200px; 
-        padding: 15px; 
-        overflow-y: auto; 
-        background: rgba(255, 255, 255, 0.905); /* Tu fondo blanquecino */
-    }
-
-    .msg-bot { 
-        background: #f1f3f0; 
-        padding: 8px 12px; 
-        border-radius: 10px; 
-        margin-bottom: 10px; 
-        font-size: 14px; 
-        color: #333; 
-    }
-
-    #chat-actions { 
-        padding: 10px; 
-        display: flex; 
-        gap: 5px; 
-        border-top: 1px solid #eee; 
-    }
-
-    #chat-actions button { 
-        background: rgba(142, 107, 19, 0.8); /* Tu color de botones */
-        color: white; 
-        border: none; 
-        padding: 6px 10px; 
-        border-radius: 5px; 
-        font-size: 12px; 
-        cursor: pointer; 
-    }
-
-    /* --- LA CORRECCIÓN DEFINITIVA PARA MÓVILES --- */
+    /* --- AJUSTE RADICAL PARA CELULARES --- */
     @media (max-width: 768px) {
         #spa-chatbot-wrapper {
-            width: auto !important; 
             right: 20px !important;
             bottom: 20px !important;
-        }
-
-        #bubble-control {
-            width: 60px !important;
-            height: 60px !important;
-            border-radius: 50% !important;
-            margin-left: auto !important; 
+            width: 60px !important; /* El contenedor se queda pequeño */
         }
 
         #chat-frame {
-            position: fixed !important; 
-            left: 20px !important;
+            position: fixed !important; /* Flota independiente de la burbuja */
+            /* Calculamos el ancho: 100% de la pantalla menos 40px de margen */
+            width: calc(100vw - 40px) !important; 
+            left: 20px !important; 
             right: 20px !important;
-            width: auto !important; 
             bottom: 90px !important;
             max-width: none !important;
+            height: 350px !important; /* Altura fija para que no se pierda */
+        }
+        
+        #chat-content {
+            height: 250px !important; /* Más espacio para leer en el cel */
         }
     }
