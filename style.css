@@ -566,25 +566,23 @@ header:hover {
     box-sizing: border-box;
 }
 
-#spa-chatbot-wrapper {
-    /* Mantenemos el fixed, pero añadimos estas tres líneas críticas */
-    position: fixed !important;
-    bottom: 30px !important;
-    right: 30px !important;
-    
-    /* Esto lo saca del flujo de la animación del body */
-    transform: translateZ(0); 
-    -webkit-transform: translateZ(0);
-    
-    /* Asegúrate de que el z-index sea mayor a cualquier capa de la animación */
-    z-index: 999999 !important;
-}
+/* ESTILOS BASE CON TUS COLORES DORADOS */
+    #spa-chatbot-wrapper {
+        position: fixed !important;
+        bottom: 30px !important;
+        right: 30px !important;
+        z-index: 999999 !important;
+        font-family: Arial, sans-serif;
+        /* Mantenemos el truco del transform para evitar parpadeos */
+        transform: translateZ(0); 
+        -webkit-transform: translateZ(0);
+    }
 
     #bubble-control {
         width: 60px;
         height: 60px;
-        background-color: #c2ac1abc;
-        border-radius: 50%;
+        background-color: #c2ac1abc; /* Tu dorado */
+        border-radius: 50% !important; /* Forzamos círculo */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -598,81 +596,85 @@ header:hover {
         bottom: 80px;
         right: 0;
         width: 300px;
-        background: rgba(218, 165, 32, .8);
+        background: rgba(218, 165, 32, .8); /* Tu fondo dorado transparente */
         border-radius: 15px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         flex-direction: column;
         overflow: hidden;
+        display: none;
     }
 
-    #chat-header-spa {
-        background:  rgba(218, 165, 32, .8);
-        color: white;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
+    /* ESTILOS INTERNOS CON TUS COLORES */
+    #chat-header-spa { 
+        background: rgba(218, 165, 32, .8); /* Tu cabecera dorada */
+        color: white; 
+        padding: 15px; 
+        display: flex; 
+        justify-content: space-between; 
     }
 
-    #chat-header-spa button {
-        background: none; border: none; color: white; cursor: pointer; font-weight: bold;
+    #chat-header-spa button { 
+        background: none; 
+        border: none; 
+        color: white; 
+        cursor: pointer; 
+        font-weight: bold; 
     }
 
-    #chat-content {
-        height: 200px;
-        padding: 15px;
-        overflow-y: auto;
-        background:  rgba(255, 255, 255, 0.905);
+    #chat-content { 
+        height: 200px; 
+        padding: 15px; 
+        overflow-y: auto; 
+        background: rgba(255, 255, 255, 0.905); /* Tu fondo blanquecino */
     }
 
-    .msg-bot {
-        background: #f1f3f0;
-        padding: 8px 12px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        font-size: 14px;
-        color: #333;
+    .msg-bot { 
+        background: #f1f3f0; 
+        padding: 8px 12px; 
+        border-radius: 10px; 
+        margin-bottom: 10px; 
+        font-size: 14px; 
+        color: #333; 
     }
 
-    #chat-actions {
-        padding: 10px;
-        display: flex;
-        gap: 5px;
-        border-top: 1px solid #eee;
+    #chat-actions { 
+        padding: 10px; 
+        display: flex; 
+        gap: 5px; 
+        border-top: 1px solid #eee; 
     }
 
-    #chat-actions button {
-        background: rgba(142, 107, 19, 0.8);
-        color: white;
-        border: none;
-        padding: 6px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        cursor: pointer;
+    #chat-actions button { 
+        background: rgba(142, 107, 19, 0.8); /* Tu color de botones */
+        color: white; 
+        border: none; 
+        padding: 6px 10px; 
+        border-radius: 5px; 
+        font-size: 12px; 
+        cursor: pointer; 
     }
 
+    /* --- LA CORRECCIÓN DEFINITIVA PARA MÓVILES --- */
     @media (max-width: 768px) {
-    #spa-chatbot-wrapper {
-        bottom: 20px !important;
-        right: 20px !important;
-        width: 60px !important; 
-        /* Eliminamos 'position: fixed' si estuviera aquí para que no limite al hijo, 
-           pero como el wrapper ya es fixed, el truco es el siguiente: */
-    }
+        #spa-chatbot-wrapper {
+            width: auto !important; 
+            right: 20px !important;
+            bottom: 20px !important;
+        }
 
-    #chat-frame {
-        /* EL CAMBIO CLAVE: */
-        position: fixed !important; /* Lo sacamos del flujo de la burbuja */
-        left: 10px !important;     /* Le damos su propio margen izquierdo */
-        right: 10px !important;    /* Le damos su propio margen derecho */
-        width: auto !important;    /* Que se expanda entre left y right */
-        bottom: 90px !important;   /* Que flote sobre la burbuja */
-        max-width: none !important; 
-        display: none; 
-    }
+        #bubble-control {
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            margin-left: auto !important; 
+        }
 
-    #bubble-control {
-        width: 60px !important;
-        height: 60px !important;
-        display: flex !important;
+        #chat-frame {
+            position: fixed !important; 
+            left: 20px !important;
+            right: 20px !important;
+            width: auto !important; 
+            bottom: 90px !important;
+            max-width: none !important;
+        }
     }
-}
