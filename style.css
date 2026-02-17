@@ -649,3 +649,27 @@ header:hover {
         font-size: 12px;
         cursor: pointer;
     }
+
+    @media (max-width: 768px) {
+    #ventana-fija {
+        /* Forzamos que esté oculto al iniciar en celulares */
+        display: none !important; 
+        
+        /* Ajustamos el tamaño para que no tape toda la pantalla del cel */
+        width: 90vw !important; 
+        right: 0 !important;
+        bottom: 70px !important;
+        position: fixed !important; /* Lo anclamos a la pantalla */
+    }
+
+    #bot-spa-definitivo {
+        bottom: 10px !important;
+        right: 10px !important;
+    }
+
+    #burbuja-fija {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 25px !important;
+    }
+}

@@ -1,12 +1,19 @@
 function toggleChatWindow() {
-        var chat = document.getElementById("chat-frame");
-        if (chat.style.display === "none") {
-            chat.style.display = "flex";
-        } else {
-            chat.style.display = "none";
-        }
-    }
+    var chat = document.getElementById("chat-frame");
+    
+    /* Le preguntamos al navegador qué estilo tiene REALMENTE el chat ahora mismo.
+       Esto evita que en el celular se confunda con el CSS que agregamos.
+    */
+    var displayActual = window.getComputedStyle(chat).display;
 
+    if (displayActual === "none") {
+        // Si está oculto, lo mostramos con 'flex' y le damos prioridad
+        chat.style.setProperty('display', 'flex', 'important');
+    } else {
+        // Si está abierto, lo ocultamos
+        chat.style.setProperty('display', 'none', 'important');
+    }
+}
     function botReply(option) {
         var content = document.getElementById("chat-content");
         var response = "";
