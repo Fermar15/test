@@ -1,0 +1,651 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    background-image: url(img/fondo3.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+body html {
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Ajuste para Celulares --- */
+@media (max-width: 768px) {
+  /* 1. Hace que cualquier contenedor con ancho fijo se adapte al 100% */
+  div, section, article, header, footer, .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: block !important; /* Apila elementos que estaban uno al lado del otro */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box;
+  }
+
+  /* 2. Ajusta imágenes y mapas (iframes) para que no se salgan de la pantalla */
+  img, iframe, video {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 3. Evita que el texto sea demasiado grande o pequeño */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+header {
+    text-align: center;
+    font-family:'Segoe UI', sans-serif;
+    font-size: 40px;
+    background: rgba(255, 255, 255, 0.33);
+    width: 100%;
+    height: 500px;
+    line-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+overflow: hidden;
+border: 1px;
+transition: 0.4s ease;
+}
+
+header:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 10px 10px 100px rgba(126, 112, 31, 0.492);
+}
+
+.enlaces {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 50px 50px;
+}
+
+.enlace-spa {
+    text-decoration: none;    
+    color: rgb(240, 194, 79);          
+    font-family: 'Segoe UI', sans-serif; 
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.enlace-spa:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.button-spa {
+     text-decoration: none;    
+    color: rgb(240, 194, 79);          
+    font-family: 'Segoe UI', sans-serif; 
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.button-spa:hover {
+    color: rgb(173, 140, 57);  
+    cursor: pointer;
+}
+
+.descripcion {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    text-align: center;
+    padding: 20px;
+    background-color:  rgba(255, 212, 218, 0.2);
+    width: auto;
+    margin-top: 60px;
+    color: white;
+    height: auto;
+    font-size: 20px;
+}
+.descripcion p {
+    margin: 0;
+}
+
+.Terapias-Tradicionales{
+    text-align: center;
+    font-size: 25px;
+    font-family:'Segoe UI', sans-serif;
+    background: rgba(255, 255, 255, 0.323);
+    width: 100%;
+    color: rgb(240, 194, 79);
+}
+
+.contenedor-masajes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.Masaje-Relajante,.Masaje-Drenaje-Linfatico,.Masaje-Deportivo,.Masaje-Descontracturante,.Masaje-Prenatal,.Veloterapia,.Masaje-Piedras,.Tratamiento-Exfoliante{
+    border: 2px solid black; 
+    background-color: rgba(218, 165, 32, .9); 
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px; 
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reafirmante {
+    border: 2px solid black; 
+    background-color: rgba(218, 165, 32, .9); 
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px auto;
+    max-width: 300px; 
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.Masaje-Relajante {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Relajante:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Drenaje-Linfatico {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Drenaje-Linfatico:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Deportivo {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Deportivo:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Descontracturante {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease; 
+}
+
+.Masaje-Descontracturante:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Prenatal {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Prenatal:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Veloterapia {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Veloterapia:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Piedras {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Piedras:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Tratamiento-Exfoliante {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease;
+}
+
+.Tratamiento-Exfoliante:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.tratamientos-faciales {
+    text-align: center;
+    font-size: 25px;
+    font-family:'Segoe UI', sans-serif;
+    background: rgba(255, 212, 218, 0.2);
+    width: 100%;
+    color: rgb(240, 194, 79);
+}
+
+.reafirmante {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.reafirmante:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+
+.terapias-button {
+    padding: 10px 20px;
+    width: 100%; 
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+.depilaciones-cera {
+    text-align: center;
+    font-size: 25px;
+    font-family:'Segoe UI', sans-serif;
+    background: rgba(255, 212, 218, 0.5);
+    width: 100%;
+    color: rgb(240, 194, 79); 
+}
+
+.contenedor-depilaciones {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.piernas, .medias, .brazos, .pecho, .espalda, .abdomen, .axilas, .bikini, .plus, .gluteos, .linea, .cejas {
+    border: 2px solid black; 
+    background-color: rgba(218, 165, 32, .9); 
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px; 
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.piernas {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.piernas:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.medias {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.medias:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.brazos {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.brazos:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.pecho {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.pecho:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.espalda {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.espalda:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.abdomen {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.abdomen:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.axilas {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.axilas:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.bikini {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.bikini:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.plus {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.plus:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.gluteos {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.gluteos:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.linea {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.linea:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.cejas {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.cejas:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.depilaciones-button {
+    padding: 10px 20px;
+    width: 100%; 
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+@keyframes entradaSuave {
+  0% { 
+    opacity: 0; 
+    transform: translateY(15px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animacion-inicio {
+  animation: entradaSuave 0.8s ease-out forwards;
+}
+
+.contenedor-mapa {
+   display: flex;
+    flex-direction: row; 
+    align-items: center; 
+     
+    gap: 20px;
+}
+
+.footer {
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+.mapa {
+   flex: 1;
+    height: 400px;
+}
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+    border: none;
+}
+
+.horario {
+    text-align: center;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color:  rgba(255, 212, 218, 0.2);
+    width: auto;
+    margin-top: 60px;
+    color: white;
+    height: auto;
+    font-size: 20px;
+}
+
+.mapa, .horario {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+#spa-chatbot-wrapper {
+    /* Mantenemos el fixed, pero añadimos estas tres líneas críticas */
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    
+    /* Esto lo saca del flujo de la animación del body */
+    transform: translateZ(0); 
+    -webkit-transform: translateZ(0);
+    
+    /* Asegúrate de que el z-index sea mayor a cualquier capa de la animación */
+    z-index: 999999 !important;
+}
+
+    #bubble-control {
+        width: 60px;
+        height: 60px;
+        background-color: #c2ac1abc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    #chat-frame {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 300px;
+        background: rgba(218, 165, 32, .8);
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    #chat-header-spa {
+        background:  rgba(218, 165, 32, .8);
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #chat-header-spa button {
+        background: none; border: none; color: white; cursor: pointer; font-weight: bold;
+    }
+
+    #chat-content {
+        height: 200px;
+        padding: 15px;
+        overflow-y: auto;
+        background:  rgba(255, 255, 255, 0.905);
+    }
+
+    .msg-bot {
+        background: #f1f3f0;
+        padding: 8px 12px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    #chat-actions {
+        padding: 10px;
+        display: flex;
+        gap: 5px;
+        border-top: 1px solid #eee;
+    }
+
+    #chat-actions button {
+        background: rgba(142, 107, 19, 0.8);
+        color: white;
+        border: none;
+        padding: 6px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        cursor: pointer;
+    }
