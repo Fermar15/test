@@ -651,39 +651,28 @@ header:hover {
     }
 
     @media (max-width: 768px) {
-    /* Blindaje del contenedor principal */
     #spa-chatbot-wrapper {
         bottom: 20px !important;
         right: 20px !important;
-        left: auto !important; /* Evita que se estire desde la izquierda */
-        width: 60px !important; /* Ancho fijo igual a la burbuja */
-        height: 60px !important;
-        display: block !important;
+        width: 60px !important; 
+        /* Eliminamos 'position: fixed' si estuviera aquí para que no limite al hijo, 
+           pero como el wrapper ya es fixed, el truco es el siguiente: */
+    }
+
+    #chat-frame {
+        /* EL CAMBIO CLAVE: */
+        position: fixed !important; /* Lo sacamos del flujo de la burbuja */
+        left: 10px !important;     /* Le damos su propio margen izquierdo */
+        right: 10px !important;    /* Le damos su propio margen derecho */
+        width: auto !important;    /* Que se expanda entre left y right */
+        bottom: 90px !important;   /* Que flote sobre la burbuja */
+        max-width: none !important; 
+        display: none; 
     }
 
     #bubble-control {
         width: 60px !important;
         height: 60px !important;
-        min-width: 60px !important; /* Evita que se colapse o estire */
-        max-width: 60px !important;
         display: flex !important;
-        border-radius: 50% !important;
-        padding: 0 !important; /* Elimina rellenos que puedan estirarla */
-        margin: 0 !important;
-    }
-
-    #bubble-icon {
-        display: block !important;
-        width: auto !important;
-        text-align: center !important;
-    }
-
-    #chat-frame {
-        /* Se mantiene centrado en la pantalla del móvi */
-        width: calc(100vw - 40px) !important;
-        left: 20px !important;
-        right: 20px !important;
-        bottom: 90px !important;
-        position: fixed !important;
     }
 }
